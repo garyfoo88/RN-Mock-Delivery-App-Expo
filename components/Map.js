@@ -1,14 +1,14 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-const MapScreen = () => {
+const Map = () => {
     return (
         <View>
-            <Text>Map Screen</Text>
+            <Text></Text>
         </View>
     )
 }
 
-export default MapScreen
+export default Map
 
 const styles = StyleSheet.create({})
