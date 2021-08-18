@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 import { useSelector } from "react-redux";
@@ -9,9 +9,17 @@ import { GOOGLE_MAPS_APIKEY } from "@env";
 const Map = () => {
   const origin = useSelector(selectOrigin);
   const destination = useSelector(selectDestination);
+  const mapRef = useRef(null);
+
+  useEffect(() => {
+    if (!origin || !destination) return;
+    //zoom and fit to the markers
+
+  }, [origin, destination])
 
   return (
     <MapView
+      ref={mapRef}
       style={tw`flex-1`}
       mapType="mutedStandard"
       initialRegion={{
